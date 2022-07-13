@@ -21,6 +21,7 @@ const DailyActivity = () => {
         <BarChart 
           width={500}
           height={300}
+          data={""}
           >
 
         </BarChart>
