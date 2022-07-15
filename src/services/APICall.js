@@ -1,4 +1,5 @@
 import axios from "axios";
+import { mockPerformancesData } from "./Mock";
 
 export function getUserInfos(id, setUser) {
     try {
@@ -36,12 +37,13 @@ export function getUserAverageSessions(id, setAverageSessions) {
     }
 }
 
-export function getUserPerformance(id, setPerformance) {
+export function getUserPerformance(id, setPerformance, performance) {
     try {
-        axios.get(`http://localhost:3000/user/${id}/performance`)
+        axios.get(`http://localhost:3000/user/18/performance`)
         .then(response => {
             //MISE EN FORME
-            return setPerformance(response.data.data)
+            setPerformance(response.data.data)
+            mockPerformancesData(setPerformance, performance)
         })
     } catch {
         return console.error("Impossible to retrieve user informations")

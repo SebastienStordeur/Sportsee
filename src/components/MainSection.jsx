@@ -21,13 +21,12 @@ const MainSection = () => {
   const [performance, setPerformance] = useState(null);
   
   useEffect(() => {
-    getUserInfos(id, setUser);
+/*     getUserInfos(id, setUser);
     getUserActivity(id, setActivity);
-    getUserAverageSessions(id, setAverageSessions);
-    getUserPerformance(id, setPerformance);
+    getUserAverageSessions(id, setAverageSessions); */
+    getUserPerformance(id, setPerformance, performance);
 
-    console.log(performance)
-    console.log("User", user)
+    console.log("performance", performance)
   }, [id])
 
   return (
@@ -41,7 +40,7 @@ const MainSection = () => {
                 <Graphs/>
             </div>
             <div className="user-nutriments">
-                {/* <CaloriesBlock data={user.keyData.calorieCount}/> */}
+               
                 <CaloriesBlock/>
                 <CaloriesBlock/>
                 <CaloriesBlock/>
