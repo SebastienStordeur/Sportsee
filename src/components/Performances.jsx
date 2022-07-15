@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import { getUserPerformance } from '../services/APICall';
 
-const Performances = () => {
+const Performances = ({data}) => {
 
-  const [performance, setPerformance] = useState(null)
+console.log(data)
+/*   const [performance, setPerformance] = useState(null)
 
   useEffect(() => {
     getUserPerformance(18, setPerformance, performance)
-    console.log("perf", performance)
-  }, [])
+  }, []) */
     
   return (
     <ResponsiveContainer width="100%" height="100%">
-    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={performance}>
+    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
       <PolarGrid />
       <PolarAngleAxis dataKey="kind" />
       <PolarRadiusAxis />

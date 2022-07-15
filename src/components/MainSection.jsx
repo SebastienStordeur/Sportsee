@@ -7,41 +7,23 @@ import { getUserInfos, getUserActivity, getUserAverageSessions, getUserPerforman
 
 
 
-const MainSection = () => {
+const MainSection = ({user, performance, averageSessions, activity}) => {
   const { id } = useParams()
 
-/*   const [user, setUser] = useState({
-    infos: null,
-    performance: null,
-  }); */
-
-  const [user, setUser] = useState(null);
-  const [activity, setActivity] = useState(null);
-  const [averageSessions, setAverageSessions] = useState(null);
-  const [performance, setPerformance] = useState(null);
-  
-  useEffect(() => {
-/*     getUserInfos(id, setUser);
-    getUserActivity(id, setActivity);
-    getUserAverageSessions(id, setAverageSessions); */
-    getUserPerformance(id, setPerformance, performance);
-
-    console.log("performance", performance)
-  }, [id])
 
   return (
     <section className="main-section">
-        <Greetings user={user} />
+        <Greetings user={user}/>
         <div className="content">
             <div className="graph-grid">
                 <DailyActivity />
+                <Graphs />
                 <Graphs data={performance}/>
-                <Graphs/>
                 <Graphs/>
             </div>
             <div className="user-nutriments">
                
-                <CaloriesBlock/>
+                <CaloriesBlock />
                 <CaloriesBlock/>
                 <CaloriesBlock/>
             </div>

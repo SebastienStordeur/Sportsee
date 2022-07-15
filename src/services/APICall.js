@@ -1,11 +1,11 @@
 import axios from "axios";
-import { mockPerformancesData } from "./Mock";
+import { mockAverageSessions, mockPerformancesData } from "./Mock";
 
 export function getUserInfos(id, setUser) {
     try {
         axios(`http://localhost:3000/user/${id}`) //Headers 
         .then(response => {
-            return setUser(response.data.data)
+            setUser(response.data.data)
         })
     } catch {
         return console.error("Impossible to retrieve user informations")
@@ -17,7 +17,7 @@ export function getUserActivity(id, setActivity) {
         axios.get(`http://localhost:3000/user/${id}/activity`)
         .then(response => {
             //MISE EN FORME
-            return setActivity(response.data.data)
+            setActivity(response.data.data)
         })
     } catch {
         return console.error("Impossible to retrieve user informations")
@@ -30,7 +30,8 @@ export function getUserAverageSessions(id, setAverageSessions) {
         //MISE EN FORME
         axios.get(`http://localhost:3000/user/${id}/average-sessions`)
         .then(response => {
-            return setAverageSessions(response.data.data)
+            setAverageSessions(response.data.data)
+            mockAverageSessions(response, setAverageSessions);
         })
     } catch {
         return console.error("Impossible to retrieve user informations")
@@ -39,11 +40,11 @@ export function getUserAverageSessions(id, setAverageSessions) {
 
 export function getUserPerformance(id, setPerformance, performance) {
     try {
-        axios.get(`http://localhost:3000/user/18/performance`)
+        axios.get(`http://localhost:3000/user/${id}/performance`)
         .then(response => {
             //MISE EN FORME
-            setPerformance(response.data.data)
-            mockPerformancesData(setPerformance, performance)
+            /* setPerformance(response.data.data) */
+            mockPerformancesData(response, setPerformance, performance)
         })
     } catch {
         return console.error("Impossible to retrieve user informations")
