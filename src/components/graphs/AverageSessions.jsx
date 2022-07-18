@@ -1,32 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { getUserAverageSessions } from '../../services/APICall'
+import React from 'react';
+
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const AverageSessions = () => {
-
-    const [AverageSessions, setAverageSessions] = useState(null)
-
-    useEffect(() => {
-      getUserAverageSessions(18, setAverageSessions, AverageSessions)
-      console.log("sessions", AverageSessions)
-    }, [])
-
-
-    const data = [
-        {
-            day: "1",
-            sessionLength: 30,
-        },
-        {
-            day:"2",
-            sessionLength: 60,
-        },
-        {
-            day:"3",
-            sessionLength: 45,
-        },
-    ]
-
+const AverageSessions = ({data}) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
     <LineChart width={500} height={300} data={data}>

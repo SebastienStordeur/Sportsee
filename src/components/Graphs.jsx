@@ -1,13 +1,9 @@
 import React from 'react'
-import AverageSessions from './graphs/AverageSessions'
-import Performances from './Performances'
 
-const Graphs = ({data}) => {
-
-  console.log(data)
+const Graphs = (props) => {
   return (
     <article className="graph">
-      <Performances data={data}/>
+      {props.children}
     </article>
   )
 }

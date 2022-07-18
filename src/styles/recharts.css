@@ -1,0 +1,21 @@
+/** performance graph **/
+
+.recharts-polar-grid-angle {
+    display: none;
+}
+
+.recharts-polar-angle-axis-tick-value {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+
+/***daily***/
+.recharts-default-legend {
+    display: flex;
+    justify-content: flex-end;
+}
+.recharts-legend-item {
+    font-size: 14px;
+    margin-right: 0;
+}

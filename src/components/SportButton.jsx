@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SportButton = ({icon}) => {
+const SportButton = (props) => {
   return (
     <button className="sport-btn">
-        <img src={icon} alt="Activité" className="icon"/>
+        <img src={props.icon} alt="Activité" className="icon"/>
     </button>
   )
 }
