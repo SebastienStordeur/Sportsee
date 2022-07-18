@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Greetings = ({user}) => {
+const Greetings = (props) => {
+  console.log(props)
   return (
     <header className="greets-header">
-        <h1>Bonjour <span>{/* {user.userInfos.firstName} */}</span></h1>
+        <h1>Bonjour <span>{/* {props.user.userInfos.firstName} */}</span></h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </header>
   )

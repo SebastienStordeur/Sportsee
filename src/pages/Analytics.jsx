@@ -20,7 +20,9 @@ const Analytics = () => {
     getUserPerformance(id, setPerformance);
   }, [id])
 
-  console.log(/* performance, user, activity, */ averageSessions)
+
+
+  console.log(user)
 
   return (
     <main id="main">

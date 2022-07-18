@@ -1,9 +1,15 @@
 import axios from "axios";
 import { mockAverageSessions, mockPerformancesData } from "./Mock";
 
+const headers =  {
+    "Content-Type": "application/json"
+}
+
 export function getUserInfos(id, setUser) {
     try {
-        axios(`http://localhost:3000/user/${id}`) //Headers 
+        axios(`http://localhost:3000/user/${id}`, {
+            headers: { headers }
+        })
         .then(response => {
             console.log("user", response.data.data)
             setUser(response.data.data)
@@ -15,7 +21,9 @@ export function getUserInfos(id, setUser) {
 
 export function getUserActivity(id, setActivity) {
     try {
-        axios.get(`http://localhost:3000/user/${id}/activity`)
+        axios.get(`http://localhost:3000/user/${id}/activity`, {
+            headers: { headers }
+        })
         .then(response => {
             //MISE EN FORME
             console.log("activity", response.data.data)
@@ -29,7 +37,9 @@ export function getUserActivity(id, setActivity) {
 
 export function getUserAverageSessions(id, setAverageSessions) {
     try {
-        axios.get(`http://localhost:3000/user/${id}/average-sessions`)
+        axios.get(`http://localhost:3000/user/${id}/average-sessions`, {
+            headers: { headers }
+        })
         .then(response => {
             mockAverageSessions(response, setAverageSessions);
         })
@@ -38,11 +48,13 @@ export function getUserAverageSessions(id, setAverageSessions) {
     }
 }
 
-export function getUserPerformance(id, setPerformance, performance) {
+export function getUserPerformance(id, setPerformance) {
     try {
-        axios.get(`http://localhost:3000/user/${id}/performance`)
+        axios.get(`http://localhost:3000/user/${id}/performance`, {
+            headers: { headers }
+        })
         .then(response => {
-            mockPerformancesData(response, setPerformance, performance)
+            mockPerformancesData(response, setPerformance)
         })
     } catch {
         return console.error("Impossible to retrieve user informations")
