@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import classes from './CustomTooltip.module.css';
 
 const AverageSessions = ({data}) => {
 
   const CustomTooltip = ({ active, payload }) => {
     if(active && payload && payload.length) {
       return (
-        <div className='custom-tooltip'>
+        <div className={classes.customtooltip}>
           <p>{payload[0].value} min</p>
         </div>
       )
@@ -18,7 +19,6 @@ const AverageSessions = ({data}) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
     <LineChart width={500} height={300} data={data}>
-      <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="day" padding={{ left: 30, right: 30 }} />
       <YAxis />
       <Tooltip content={<CustomTooltip/>}/>

@@ -7,7 +7,7 @@ const Performances = ({data}) => {
     <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
       <PolarGrid />
       <PolarAngleAxis dataKey="kind" tick={{fill: 'white'}}/>
-      <Radar dataKey="value" fill="#ffffff" fillOpacity={0.7} />
+      <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
     </RadarChart>
   </ResponsiveContainer>
   )

@@ -108,7 +108,7 @@ li {
 .graph {
     width: 258px;
     height: 263px;
-    background-color: var(--red);
+    background-color: #282D30;
     border-radius: 5px;
     overflow: hidden;
 }

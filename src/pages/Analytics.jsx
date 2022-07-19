@@ -20,10 +20,6 @@ const Analytics = () => {
     getUserPerformance(id, setPerformance);
   }, [id])
 
-
-
-  console.log(user)
-
   return (
     <main id="main">
       <NavBar />

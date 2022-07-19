@@ -1,0 +1,23 @@
+.customtooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    height: 25px;
+    background: #fff;
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.dailytooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 63px;
+    width: 39px;
+    color: #fff;
+    background-color: #E60000;
+    font-size: 7px;
+    font-weight: 500;
+}

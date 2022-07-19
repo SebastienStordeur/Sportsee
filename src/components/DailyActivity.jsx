@@ -2,7 +2,6 @@ import React from 'react'
 import {
   BarChart,
   Bar,
-  Brush,
   ReferenceLine,
   XAxis,
   YAxis,
@@ -11,6 +10,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+
+import classes from './graphs/CustomTooltip.module.css';
 
 /* https://recharts.org/en-US/examples/BrushBarChart */
 
@@ -24,7 +25,17 @@ const DailyActivity = () => {
 
   ]
 
-
+  const CustomTooltip = ({ active, payload }) => {
+    if(active && payload && payload.length) {
+      return (
+        <div className={classes.dailytooltip}>
+          <p>{payload[0].value}kg</p>
+          <p>{payload[1].value}Kcal</p>
+        </div>
+      )
+    }
+    return null;
+  }
 
   return (
     <div className='daily'>
@@ -40,10 +51,10 @@ const DailyActivity = () => {
         bottom: 5,
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
+      <CartesianGrid strokeDasharray="3 3" vertical={false}/>
       <XAxis dataKey="name" />
       <YAxis />
-      <Tooltip />
+      <Tooltip content={<CustomTooltip />}/>
       <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
       <ReferenceLine y={0} stroke="#000" />
       <Bar dataKey="Poids (kg)" fill="#282D30" />

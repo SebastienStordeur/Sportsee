@@ -11,6 +11,8 @@ import Score from './graphs/Score'
 const MainSection = ({user, performance, averageSessions, activity}) => {
   const { id } = useParams()
 
+  console.log("user", user)
+
 
   return (
     <section className="main-section">
