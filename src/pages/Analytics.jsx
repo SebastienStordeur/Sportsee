@@ -24,12 +24,12 @@ const Analytics = () => {
     <main id="main">
       <NavBar />
       <SideBar />
-      <MainSection 
+      {user && <MainSection 
         performance={performance} 
         user={user}
         activity={activity}
         averageSessions={averageSessions}
-      />
+      />}
     </main>
   )
 }

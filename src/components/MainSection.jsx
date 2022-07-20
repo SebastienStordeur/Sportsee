@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Performances from './graphs/Performances';
-import { useParams } from "react-router-dom";
 
 import { Greetings, Graphs, CaloriesBlock, DailyActivity } from "../components";
-import { getUserInfos, getUserActivity, getUserAverageSessions, getUserPerformance } from '../services/APICall';
 import AverageSessions from './graphs/AverageSessions'
 import Score from './graphs/Score'
 
 
 const MainSection = ({user, performance, averageSessions, activity}) => {
-  const { id } = useParams()
 
-  console.log("user", user)
+  console.log("user", user.keyData)
 
 
   return (
@@ -31,10 +28,9 @@ const MainSection = ({user, performance, averageSessions, activity}) => {
                 </Graphs>
             </div>
             <div className="user-nutriments">
-                <CaloriesBlock />
-                <CaloriesBlock />
-                <CaloriesBlock/>
-                <CaloriesBlock/>
+{/*               {user.keyData(data => {
+                return <CaloriesBlock content={data} />
+              })} */}
             </div>
         </div>
     </section>

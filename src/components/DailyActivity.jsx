@@ -29,8 +29,9 @@ const DailyActivity = () => {
     if(active && payload && payload.length) {
       return (
         <div className={classes.dailytooltip}>
-          <p>{payload[0].value}kg</p>
-          <p>{payload[1].value}Kcal</p>
+          {payload.map(load => {
+            return <p key={Math.random().toString()}>{load.value + load.unit}</p>
+          })}
         </div>
       )
     }
@@ -57,8 +58,8 @@ const DailyActivity = () => {
       <Tooltip content={<CustomTooltip />}/>
       <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
       <ReferenceLine y={0} stroke="#000" />
-      <Bar dataKey="Poids (kg)" fill="#282D30" />
-      <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" />
+      <Bar dataKey="Poids (kg)" fill="#282D30" unit="kg" />
+      <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" unit="Kcal" />
     </BarChart>
     </ResponsiveContainer>
 
