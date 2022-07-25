@@ -1,3 +1,22 @@
+
+export function mockUserActivity(response, setActivity) {
+    const userActivityArray = [];
+    const data = response.data.data;
+
+    for(let index = 0; index < data.sessions.length; index++) {
+        var day = data.sessions[index].day.split('-')[2];
+        if(day[0] === '0') day = day.split(0)[1];
+
+        const userActivityObject = {
+            day: day,
+            'Poids (kg)' : data.sessions[index].kilogram,
+            'Calories brûlées (kCal)' : data.sessions[index].calories
+        };
+        userActivityArray.push(userActivityObject);
+    };
+    return setActivity(userActivityArray);
+};
+
 export function mockAverageSessions(response, setAverageSessions) {
     const averageSessionArray = [];
     const data = response.data.data;

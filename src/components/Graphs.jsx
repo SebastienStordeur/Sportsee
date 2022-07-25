@@ -2,7 +2,7 @@ import React from 'react'
 
 const Graphs = (props) => {
   return (
-    <article className="graph">
+    <article className={`graph ${props.className}`}>
       {props.children}
     </article>
   )

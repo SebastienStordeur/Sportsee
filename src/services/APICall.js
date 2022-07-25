@@ -1,5 +1,5 @@
 import axios from "axios";
-import { mockAverageSessions, mockPerformancesData } from "./Mock";
+import { mockAverageSessions, mockPerformancesData, mockUserActivity } from "./Mock";
 
 const headers =  {
     "Content-Type": "application/json"
@@ -27,7 +27,8 @@ export function getUserActivity(id, setActivity) {
         .then(response => {
             //MISE EN FORME
             console.log("activity", response.data.data)
-            setActivity(response.data.data)
+            /* setActivity(response.data.data) */
+            mockUserActivity(response, setActivity)
         })
     } catch {
         return console.error("Impossible to retrieve user informations")

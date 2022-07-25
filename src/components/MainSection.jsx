@@ -8,7 +8,7 @@ import Score from './graphs/Score'
 
 const MainSection = ({user, performance, averageSessions, activity}) => {
 
-  console.log("user", user.keyData)
+  console.log('activity', activity)
 
 
   return (
@@ -16,18 +16,27 @@ const MainSection = ({user, performance, averageSessions, activity}) => {
         <Greetings user={user}/>
         <div className="content">
             <div className="graph-grid">
-                <DailyActivity />
-                <Graphs>
+                <DailyActivity data={activity} />
+                <Graphs className='average-graph'>
                   <AverageSessions data={averageSessions}/>
                 </Graphs>
                 <Graphs>
                   <Performances data={performance}/>
                 </Graphs>
-                <Graphs>
+                <Graphs className='score-graph'>
                   <Score />
                 </Graphs>
             </div>
             <div className="user-nutriments">
+
+{/*               {user && <div>
+                {user.keyData.map(data => {
+                  return <CaloriesBlock data={data} />
+                })}
+                </div>} */}
+{/*               {user && user.keyData.map({
+                return <CaloriesBlock />
+              })} */}
 {/*               {user.keyData(data => {
                 return <CaloriesBlock content={data} />
               })} */}
