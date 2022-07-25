@@ -1,13 +1,14 @@
 import React from 'react'
+import SportButton from './SportButton'
 
 const CaloriesBlock = (props) => {
 
   console.log(props)
-  /* console.log(props) */
   /* console.log(userData) */
   return (
     <div className="cal-block">
-      {/* {userData.keyData.calorieCount} */}
+      {props.data}
+     {/*  <SportButton><img src={props.icon} alt='' /></SportButton> */}
     </div>
   )
 }

@@ -1,7 +1,4 @@
-import React from 'react'
-
 const Greetings = (props) => {
-  console.log(props)
   return (
     <header className="greets-header">
         <h1>Bonjour <span>{props.user.userInfos.firstName}</span></h1>

@@ -20,10 +20,10 @@ const AverageSessions = ({data}) => {
     <ResponsiveContainer width="100%" height="100%">
     <LineChart width={500} height={300} data={data}>
       <XAxis dataKey="day" stroke='#fff' axisLine={false} />
-{/*       <YAxis /> */}
+      {/* <YAxis /> */}
       <Tooltip content={<CustomTooltip/>}/>
-      {/* <Legend /> */}
-      <Line type="monotone" dataKey="sessionLength" unit="min" stroke="#FFF" activeDot={{ r: 8 }} />
+      <Legend verticalAlign='top' iconSize={0}/>
+      <Line type="monotone" dataKey="Durée moyenne des sessions" unit="min" stroke="#FFF" activeDot={{ r: 8 }} />
     </LineChart>
   </ResponsiveContainer>
   )

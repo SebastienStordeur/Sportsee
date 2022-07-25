@@ -2,7 +2,7 @@ import React from 'react'
 
 const SportButton = (props) => {
   return (
-    <button className="sport-btn">
+    <button className="btn">
         <img src={props.icon} alt="Activité" className="icon"/>
     </button>
   )

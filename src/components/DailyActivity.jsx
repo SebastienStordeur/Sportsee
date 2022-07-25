@@ -45,13 +45,13 @@ const DailyActivity = ({data}) => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-        <XAxis dataKey="day" />
+        <XAxis dataKey="day"/>
         <YAxis orientation='right' scale='auto' />
         <Tooltip content={<CustomTooltip />}/>
         <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
-        <ReferenceLine y={0} stroke="#000" />
-        <Bar dataKey="Poids (kg)" fill="#282D30" unit="kg" />
-        <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" unit="Kcal" />
+        <ReferenceLine y={0} stroke="#DEDEDE" />
+        <Bar dataKey="Poids (kg)" fill="#282D30" unit="kg" barSize={7} radius={[3, 3, 0, 0]}/>
+        <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" unit="Kcal" barSize={7} radius={[3, 3, 0, 0]}/>
       </BarChart>
     </ResponsiveContainer>
 

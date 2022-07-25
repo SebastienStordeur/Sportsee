@@ -1,3 +1,12 @@
+export function mockUserDatas(response, setScore) {
+    const userArray = [];
+    const data = response.data.data;
+
+
+}
+
+
+
 
 export function mockUserActivity(response, setActivity) {
     const userActivityArray = [];
@@ -17,6 +26,7 @@ export function mockUserActivity(response, setActivity) {
     return setActivity(userActivityArray);
 };
 
+
 export function mockAverageSessions(response, setAverageSessions) {
     const averageSessionArray = [];
     const data = response.data.data;
@@ -24,7 +34,7 @@ export function mockAverageSessions(response, setAverageSessions) {
     for(let index = 0; index < data.sessions.length; index++) {
         const averageSessionObject = {
             day: data.sessions[index].day,
-            sessionLength: data.sessions[index].sessionLength,
+            'Durée moyenne des sessions': data.sessions[index].sessionLength,
         };
         averageSessionArray.push(averageSessionObject);
     }

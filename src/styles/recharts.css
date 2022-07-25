@@ -20,6 +20,16 @@
     margin-right: 0;
 }
 
-.recharts-bar-rectangle {
-    width: 20px;
-}
+
+
+/*** average length ***/
+
+/* .recharts-legend-item-text {
+    opacity: 0.6;
+    position: absolute;
+    left: 20px;
+    top: 29px;
+    max-width: 50%;
+    text-align: left;
+    line-height: 24px;
+} */

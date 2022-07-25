@@ -28,18 +28,9 @@ const MainSection = ({user, performance, averageSessions, activity}) => {
                 </Graphs>
             </div>
             <div className="user-nutriments">
-
-{/*               {user && <div>
-                {user.keyData.map(data => {
-                  return <CaloriesBlock data={data} />
-                })}
-                </div>} */}
-{/*               {user && user.keyData.map({
-                return <CaloriesBlock />
-              })} */}
-{/*               {user.keyData(data => {
-                return <CaloriesBlock content={data} />
-              })} */}
+              {Object.values(user.keyData).map(data => {
+                return <CaloriesBlock data={data} />
+              })}
             </div>
         </div>
     </section>
